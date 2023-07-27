@@ -1,6 +1,6 @@
 from aiogram import Bot, Dispatcher
 from aiogram.filters import Command, CommandStart
-from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Messa
+from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 import os
 
 #import tg bot api token from local environment
@@ -49,7 +49,5 @@ async def process_other_command(message: Message):
                          reply_markup=keyboard)
 
 
-if __name__ == '__main__':
-    dp.run_polling(bot)
 if __name__ == '__main__':
     dp.run_polling(bot)
