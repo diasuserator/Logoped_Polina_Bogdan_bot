@@ -26,10 +26,10 @@ jobs:
           API_TOKEN: ${{ secrets.API_TOKEN }}
       run: |
        ssh -o StrictHostKeyChecking=no -p $REMOTE_PORT $REMOTE_USER@$REMOTE_HOST "\
-       cd /bot/Logoped_Polina_Bogdan_bot/ && \
-       docker stop logoped_polina_bogdan_bot && \
-       docker rm logoped_polina_bogdan_bot && \
-       docker rmi logoped_polina_bogdan_bot:v0.1 && \
-       git pull && \
-       docker build --no-cache -t logoped_polina_bogdan_bot:v0.1 . && \
+       cd /bot/Logoped_Polina_Bogdan_bot/ ; \
+       docker stop logoped_polina_bogdan_bot ; \
+       docker rm logoped_polina_bogdan_bot ; \
+       docker rmi logoped_polina_bogdan_bot:v0.1 ; \
+       git pull ; \
+       docker build --no-cache -t logoped_polina_bogdan_bot:v0.1 . ; \
        docker run -d -e API_TOKEN=${API_TOKEN} --name logoped_polina_bogdan_bot --restart=unless-stopped -v ./:/bot logoped_polina_bogdan_bot:v0.1"
